@@ -1,0 +1,15 @@
+apiVersion: skaffold/v2alpha3
+kind: Config
+metadata:
+  name: dummy-dotnet-k8s-app
+build:
+  artifacts:
+    - image: dummy-dotnet-k8s-app
+      # context: '.'
+      # sync:
+      #   infer:
+      #   - 'app'
+deploy:
+  kubectl:
+    manifests:
+    - k8s/*
